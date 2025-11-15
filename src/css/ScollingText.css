@@ -1,0 +1,158 @@
+/* AdvancedScrollingText3D.css */
+.advanced-scrolling-container {
+  height: 60px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+  padding: 0 20px;
+  perspective: 1000px;
+}
+
+.advanced-scrolling-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.advanced-word-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-primary);
+  text-shadow: var(--bg-primary);
+  opacity: 0;
+}
+
+/* Upward animation with individual item control */
+.advanced-scrolling-content.up .advanced-word-item {
+  animation: individualScrollUp infinite linear;
+}
+
+@keyframes individualScrollUp {
+  0% {
+    transform: translateY(100%) rotateX(var(--tilt-angle, 25deg));
+    opacity: 0;
+    filter: blur(4px);
+  }
+  10% {
+    transform: translateY(80%) rotateX(calc(var(--tilt-angle, 25deg) * 0.8));
+    opacity: 0.3;
+    filter: blur(3px);
+  }
+  20% {
+    transform: translateY(60%) rotateX(calc(var(--tilt-angle, 25deg) * 0.6));
+    opacity: 0.6;
+    filter: blur(2px);
+  }
+  30% {
+    transform: translateY(40%) rotateX(calc(var(--tilt-angle, 25deg) * 0.4));
+    opacity: 0.8;
+    filter: blur(1px);
+  }
+  40% {
+    transform: translateY(20%) rotateX(calc(var(--tilt-angle, 25deg) * 0.2));
+    opacity: 0.9;
+    filter: blur(0.5px);
+  }
+  50% {
+    transform: translateY(0%) rotateX(0deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  60% {
+    transform: translateY(-20%) rotateX(calc(var(--tilt-angle, 25deg) * -0.2));
+    opacity: 0.9;
+    filter: blur(0.5px);
+  }
+  70% {
+    transform: translateY(-40%) rotateX(calc(var(--tilt-angle, 25deg) * -0.4));
+    opacity: 0.8;
+    filter: blur(1px);
+  }
+  80% {
+    transform: translateY(-60%) rotateX(calc(var(--tilt-angle, 25deg) * -0.6));
+    opacity: 0.6;
+    filter: blur(2px);
+  }
+  90% {
+    transform: translateY(-80%) rotateX(calc(var(--tilt-angle, 25deg) * -0.8));
+    opacity: 0.3;
+    filter: blur(3px);
+  }
+  100% {
+    transform: translateY(-100%) rotateX(calc(var(--tilt-angle, 25deg) * -1));
+    opacity: 0;
+    filter: blur(4px);
+  }
+}
+
+/* Downward animation with individual item control */
+.advanced-scrolling-content.down .advanced-word-item {
+  animation: individualScrollDown infinite linear;
+}
+
+@keyframes individualScrollDown {
+  0% {
+    transform: translateY(-100%) rotateX(calc(var(--tilt-angle, 25deg) * -1));
+    opacity: 0;
+    filter: blur(4px);
+  }
+  10% {
+    transform: translateY(-80%) rotateX(calc(var(--tilt-angle, 25deg) * -0.8));
+    opacity: 0.3;
+    filter: blur(3px);
+  }
+  20% {
+    transform: translateY(-60%) rotateX(calc(var(--tilt-angle, 25deg) * -0.6));
+    opacity: 0.6;
+    filter: blur(2px);
+  }
+  30% {
+    transform: translateY(-40%) rotateX(calc(var(--tilt-angle, 25deg) * -0.4));
+    opacity: 0.8;
+    filter: blur(1px);
+  }
+  40% {
+    transform: translateY(-20%) rotateX(calc(var(--tilt-angle, 25deg) * -0.2));
+    opacity: 0.9;
+    filter: blur(0.5px);
+  }
+  50% {
+    transform: translateY(0%) rotateX(0deg);
+    opacity: 1;
+    filter: blur(0px);
+  }
+  60% {
+    transform: translateY(20%) rotateX(calc(var(--tilt-angle, 25deg) * 0.2));
+    opacity: 0.9;
+    filter: blur(0.5px);
+  }
+  70% {
+    transform: translateY(40%) rotateX(calc(var(--tilt-angle, 25deg) * 0.4));
+    opacity: 0.8;
+    filter: blur(1px);
+  }
+  80% {
+    transform: translateY(60%) rotateX(calc(var(--tilt-angle, 25deg) * 0.6));
+    opacity: 0.6;
+    filter: blur(2px);
+  }
+  90% {
+    transform: translateY(80%) rotateX(calc(var(--tilt-angle, 25deg) * 0.8));
+    opacity: 0.3;
+    filter: blur(3px);
+  }
+  100% {
+    transform: translateY(100%) rotateX(var(--tilt-angle, 25deg));
+    opacity: 0;
+    filter: blur(4px);
+  }
+}
