@@ -1,7 +1,5 @@
-import { Container, Grid, Header } from '@cloudscape-design/components';
+import { Grid } from '@cloudscape-design/components';
 import '../css/HomePage.css';
-import placeholderImage from '../assets/elementor-placeholder-image.png';
-import { useEffect, useState } from 'react';
 import AdvancedScrollingText3D from './ScrollingText.tsx';
 import Headset_pic from '../assets/headset_pic.png';
 import cpp_icon from '../assets/cpp-icon.png';
@@ -22,13 +20,6 @@ import docker_icon from '../assets/docker-icon.png';
 import vite_icon from '../assets/vite-icon.png';
 
 const HomePage = () => {
-  const [containerHeight, setContainerHeight] = useState(0);
-  
-  const alignCustomContainer = () => {
-    const container = document.getElementById('home-page');
-    setContainerHeight(container?.clientHeight ?? 0);
-    console.log(container?.offsetHeight);
-  };
 
   return (
     <div className="home-page" id='home-page'>
