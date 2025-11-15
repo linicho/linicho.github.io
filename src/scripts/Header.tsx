@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import '../css/Header.css';
 import { Grid } from '@cloudscape-design/components';
 import ThemeToggle from './ThemeToggle';
