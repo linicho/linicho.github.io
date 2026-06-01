@@ -25,12 +25,55 @@
   font-size: large;
 }
 
+.nav-item {
+  color: var(--text-primary);
+  text-decoration: none;
+  width: 100%;
+}
+
+.contact-wrapper {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.contact-tooltip {
+  position: absolute;
+  margin-top: 14%;
+  right: 0;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 1000;
+}
+
+.contact-wrapper:hover .contact-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.contact-item {
+  font-size: small;
+  margin: 5px 0;
+}
+
+.contact-item strong {
+  display: inline-block;
+  width: 50px;
+}
+
 /* Light theme colors */
 :root {
-  --box-bg-color: #eedfb3; /* Orange for light mode */
+  --box-bg-color: #eedfb3;
 }
 
 /* Dark theme colors */
 .dark {
-  --box-bg-color: #222222; /* Green for dark mode */
+  --box-bg-color: #222222;
 }

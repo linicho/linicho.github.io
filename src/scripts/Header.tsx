@@ -14,7 +14,6 @@ const HeaderBar = () => {
       if (headerBoxRef.current && headerSpacerRef.current) {
         const headerHeight = headerBoxRef.current.offsetHeight;
         headerSpacerRef.current.style.height = `${headerHeight}px`;
-        // Set CSS custom property
         document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
       }
     };
@@ -29,16 +28,13 @@ const HeaderBar = () => {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsSmallScreen(window.innerWidth < 800); // 50rem = 800px
+      setIsSmallScreen(window.innerWidth < 800);
     };
 
-    // Initial check
     checkScreenSize();
 
-    // Add event listener
     window.addEventListener('resize', checkScreenSize);
 
-    // Clean up
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
@@ -69,35 +65,50 @@ const HeaderBar = () => {
             <div></div>
             <ThemeToggle />
             <div className="nav-item">
-              {isSmallScreen ? (
-                <span title="Resume">📄</span>
+              {/* {isSmallScreen ? (
+                <span title="Resume">⌂</span>
               ) : (
                 <span>Home</span>
-              )}
+              )} */}
             </div>
+
             <div className="nav-item">
-              {isSmallScreen ? (
-                <span title="Projects">💼</span>
+              {/* {isSmallScreen ? (
+                <span title="Projects">🕮</span>
               ) : (
                 <span>Projects</span>
-              )}
+              )} */}
             </div>
+
             <a className="nav-item"
                  href={resume}
                  rel="noopener noreferrer"
             >
               {isSmallScreen ? (
-                <span title="Projects">📄</span>
+                <span title="Resume">🗎</span>
               ) : (
                 <span>Resume</span>
               )}
             </a>
-            <div className="nav-item">
+
+            <div className="nav-item contact-wrapper">
               {isSmallScreen ? (
-                <span title="Projects">💼</span>
+                <span title="Contact">✉</span>
               ) : (
                 <span>Contact</span>
               )}
+              
+              <div className="contact-tooltip">
+                <div className="contact-info">
+                  <div className="contact-item">
+                    linicho0919@gmail.com
+                  </div>
+                  <div className="contact-item">
+                    +1 (248) 786-9227
+                  </div>
+                </div>
+              </div>
+
             </div>
           </Grid>
         </Grid>
